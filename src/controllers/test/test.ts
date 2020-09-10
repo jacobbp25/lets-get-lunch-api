@@ -4,7 +4,7 @@ import User from '../../models/user';
 import Promise = require('bluebird');
 
 function destroy(req, res) {
-  Promise.all([User.remove({}), Event.remove({}), Comment.remove({})])
+  Promise.all<any, any, any>([User.remove({}), Event.remove({}), Comment.remove({})])
     .then((resp) => {
       res.status(200).json(resp);
     })
